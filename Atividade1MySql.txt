@@ -1,0 +1,30 @@
+use db_rhempresa;
+
+Create table tb_funcionarios (
+	id bigint(5) auto_increment,
+	nome varchar(35) not null,
+	idade int(2),
+	cpf bigint(11) not null,
+	salario decimal(10, 2),
+	ativo boolean,
+    primary key(id)
+)
+
+insert into tb_funcionarios(nome, idade, cpf, salario, ativo) 
+	values ("Jonas", 18, 12345678910, 1500, true);
+insert into tb_funcionarios(nome, idade, cpf, salario, ativo) 
+	values ("Samira", 22, 4857361110, 6500, false);
+insert into tb_funcionarios(nome, idade, cpf, salario, ativo) 
+	values ("Vagnão", 27, 9876554328, 15000, true);
+insert into tb_funcionarios(nome, idade, cpf, salario, ativo) 
+	values ("Elamesmo", 23, 12304563228, 4500, true);
+insert into tb_funcionarios(nome, idade, cpf, salario, ativo) 
+	values ("Danado", 30, 12131415161, 3000, False);  
+
+select * from tb_funcionarios where salario >2000
+
+select * from tb_funcionarios where salario <2000  
+
+update tb_funcionarios set salario = 2000 where id = 1;
+
+select * from tb_funcionarios
